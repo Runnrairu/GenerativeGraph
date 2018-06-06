@@ -5,19 +5,20 @@ https://arxiv.org/abs/1803.03324
 ## Usage
 
 ### Enviroments (CPU/GPU)
-Pull the Envrioment for this implementation.  
+#### Pull the Envrioment for this implementation.  
 `docker pull relutropy/research`  
 
-Run the enviroment.  
+#### Run the enviroment.  
 ##### CPU  
 `docker run -i -t -p 1111:1111 relutropy/research /bin/bash`  
 ##### GPU  
 `nvidia-docker run -i -t -p 1111:1111 relutropy/research /bin/bash`  
 
-Start jupyter server by below command.  
+#### Start jupyter server by below command.  
 `In container $ nohup jupyter notebook --allow-root >> jupyter.log 2>&1 &`  
 
 ### Codes on Jupyter Notebooks
+To get notebooks execute this command.
 `git clone https://github.com/shllln/GenerativeGraph.git`  
 
 
