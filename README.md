@@ -13,8 +13,3 @@ Start jupyter server by below command.
 
 ### Codes on Jupyter Notebooks
 `git clone https://github.com/shllln/GenerativeGraph.git`  
-
-
-
-There are many issue.
-Welcome PR and issue.  
