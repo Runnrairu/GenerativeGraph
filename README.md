@@ -7,7 +7,10 @@ https://arxiv.org/abs/1803.03324
 ### Enviroments
 Pull the Envrioments for this implementation.  
 `docker pull relutropy/research`  
-start jupyter server by below command.  
+Start jupyter server by below command.  
 `user$ nohup jupyter notebook --allow-root >> jupyter.log 2>&1 &`  
 ### Codes on Jupyter Notebooks
-git clone https://github.com/shllln/GenerativeGraph.git  
+`git clone https://github.com/shllln/GenerativeGraph.git`  
+
+
+#### Warning. Not completed implementation.
