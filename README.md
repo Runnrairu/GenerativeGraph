@@ -15,5 +15,4 @@ Start jupyter server by below command.
 `git clone https://github.com/shllln/GenerativeGraph.git`  
 
 
-## Warning. 
 Welcome PR and issue.  
