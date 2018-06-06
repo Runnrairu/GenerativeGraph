@@ -9,9 +9,9 @@ Pull the Envrioment for this implementation.
 `docker pull relutropy/research`  
 
 Run the enviroment.  
-CPU  
-`docker run -i -t -p 1111:1111 relutropy/research /bin/bash`
-GPU  
+##### CPU  
+`docker run -i -t -p 1111:1111 relutropy/research /bin/bash`  
+##### GPU  
 `nvidia-docker run -i -t -p 1111:1111 relutropy/research /bin/bash`  
 
 Start jupyter server by below command.  
