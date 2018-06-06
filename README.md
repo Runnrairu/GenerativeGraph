@@ -5,8 +5,14 @@ https://arxiv.org/abs/1803.03324
 ## Usage
 
 ### Enviroments (CPU/GPU)
-Pull the Envrioments for this implementation.  
+Pull the Envrioment for this implementation.  
 `docker pull relutropy/research`  
+
+Run the enviroment.  
+CPU  
+`docker run -i -t -p 1111:1111 relutropy/research /bin/bash`
+GPU  
+`nvidia-docker run -i -t -p 1111:1111 relutropy/research /bin/bash`  
 
 Start jupyter server by below command.  
 `In container $ nohup jupyter notebook --allow-root >> jupyter.log 2>&1 &`  
@@ -16,7 +22,7 @@ Start jupyter server by below command.
 
 
 #### Welcome PR and issue.
-This is prtotype.  
+##### This is prtotype.  
 There are some differences from the paper.  
 For example, h_v_init has no condition vector and Datasets is Tox21 now.  
 That will match the paper soon.  
