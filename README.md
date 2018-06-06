@@ -13,3 +13,11 @@ Start jupyter server by below command.
 
 ### Codes on Jupyter Notebooks
 `git clone https://github.com/shllln/GenerativeGraph.git`  
+
+
+#### Welcome PR and issue.
+This is prtotype.  
+There are some differences from the paper.  
+For example, h_v_init has no condition vector and Datasets is Tox21 now.  
+That will match the paper soon.  
+
