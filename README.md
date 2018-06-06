@@ -2,7 +2,12 @@
 Yujia Li, Oriol Vinyals, Chris Dyer, Razvan Pascanu, Peter Battaglia
 https://arxiv.org/abs/1803.03324
 
-### Enviroments
-docker pull relutropy/research
+## Usage
 
+### Enviroments
+Pull the Envrioments for this implementation.  
+`docker pull relutropy/research`  
+start jupyter server by below command.  
+`user$ nohup jupyter notebook --allow-root >> jupyter.log 2>&1 &`  
 ### Codes on Jupyter Notebooks
+git clone https://github.com/shllln/GenerativeGraph.git  
