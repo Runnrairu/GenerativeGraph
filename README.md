@@ -1,5 +1,5 @@
 # Pytorch Implementation for Learning Deep Generative Models of Graphs
-Yujia Li, Oriol Vinyals, Chris Dyer, Razvan Pascanu, Peter Battaglia  
+Yujia Li, Oriol Vinyals, Chris Dyer, Razvan Pascanu, Peter Battaglia from DeepMind
 https://arxiv.org/abs/1803.03324  
 
 ## Usage
@@ -13,6 +13,8 @@ Start jupyter server by below command.
 
 ### Codes on Jupyter Notebooks
 `git clone https://github.com/shllln/GenerativeGraph.git`  
+
+
 
 
 Welcome PR and issue.  
