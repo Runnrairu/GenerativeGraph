@@ -1,10 +1,10 @@
 # Pytorch Implementation for Learning Deep Generative Models of Graphs
-Yujia Li, Oriol Vinyals, Chris Dyer, Razvan Pascanu, Peter Battaglia
-https://arxiv.org/abs/1803.03324
+Yujia Li, Oriol Vinyals, Chris Dyer, Razvan Pascanu, Peter Battaglia  
+https://arxiv.org/abs/1803.03324  
 
 ## Usage
 
-### Enviroments
+### Enviroments (CPU/GPU)
 Pull the Envrioments for this implementation.  
 `docker pull relutropy/research`  
 
