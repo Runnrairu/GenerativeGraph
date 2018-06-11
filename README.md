@@ -26,6 +26,6 @@ To get notebooks execute this command.
 #### Welcome PR and issue.
 ##### This is prtotype.  
 There are some differences from the paper.  
-For example, h_v_init has no condition vector and Datasets is Tox21 now.  
+For example, h_v_init has no condition vector.  
 That will match the paper soon.  
 
