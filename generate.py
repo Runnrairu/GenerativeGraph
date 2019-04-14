@@ -48,7 +48,7 @@ if use_cuda:
 torch.manual_seed(123)
 torch.cuda.manual_seed_all(123)
 np.random.seed(123)
-In [ ]:
+
 class Model(nn.Module):
     def __init__(self, feat_size, N_Max_atom, N_Max_bond, N_Max_hand, parts, T):
         super(Model, self).__init__()
@@ -348,7 +348,7 @@ class Model(nn.Module):
         h_v = f_init(torch.cat((e, h_G_init), 1))
         
         return h_v
-In [ ]:
+
 class Featurizer(object):
     def __init__(self, N_Max_atom, N_Max_bond, N_Max_hand, parts):
         super(Featurizer, self).__init__()
@@ -419,7 +419,7 @@ class Featurizer(object):
                     c += 1
                     for index_bond, bond in enumerate(mol.GetBonds()):
                         ids[c, 0, index_bond] = (parts[str(bond.GetBondType())] * bond.GetEndAtomIdx()) + bond.GetEndAtomIdx() + parts[str(bond.GetBondType())]
-In [ ]:
+
 from io import StringIO
 import sys
 Chem.WrapLogs()
@@ -469,7 +469,7 @@ def write_mol(node_batch, edge_batch, gen_size):
     valid_rate = count / gen_size
     
     return mols_gen, smiles_gen, valid_rate, failures
-In [ ]:
+
 from rdkit.Chem.Draw import IPythonConsole
 from IPython.display import SVG
 from rdkit.Chem import rdDepictor
@@ -503,13 +503,13 @@ def moltosvg(mol, molSize=(400,400), index=False, kekulize=True):
     # the underlying issue needs to be resolved at the generation step
     
     return svg.replace('svg:','')
-In [ ]:
+
 def calc_lr(epoch_num):
     return 0.000000001 * 1.3 ** epoch_num
 def mol_num(mols):
     num = sum([1 for mol in tqdm(mols) if mol is not None and int(Chem.AddHs(mol).GetNumAtoms()) <= N_Max_atom ])
     return num
-In [ ]:
+
 atom_to_num = {}
 num_to_atom ={}
 for i in range(121):
@@ -522,7 +522,7 @@ bond_to_num = {'AROMATIC': 0, 'SINGLE': 1, 'DOUBLE': 2, 'TRIPLE': 3}
 num_to_bond = {0: Chem.BondType.AROMATIC, 1: Chem.BondType.SINGLE, 2: Chem.BondType.DOUBLE, 3: Chem.BondType.TRIPLE}
 parts = (atom_to_num, bond_to_num)
 Change settings for training set.
-In [ ]:
+
 zinc_mols = Chem.SmilesMolSupplier('250k_rndm_zinc_drugs_clean.smi', delimiter='\t', titleLine=False)
 N_Max_atom = 83 # you can change this number. you can collect mol whose number of node is less than set number. 
                 #If you want to use all training data, set 83.
@@ -531,13 +531,13 @@ N_Max_hand = 4
 #N_Max_bond = max([Chem.AddHs(mol).GetNumBonds() for mol in tqdm(zinc_mols) if mol is not None]) # result in 87
 #N_Max_atom = max([Chem.AddHs(mol).GetNumAtoms() for mol in tqdm(zinc_mols) if mol is not None])# result in 83
 Create training data set.
-In [ ]:
+
 featurizer = Featurizer(N_Max_atom, N_Max_bond, N_Max_hand, parts)
 if not os.path.exists('./zinc.hdf5'):
     print('zinc set')
     featurizer(zinc_mols,'./zinc.hdf5')
 Change settings for Model.
-In [ ]:
+
 #Settings
 
 batch_size = 1 # you can't chenge batch size.
@@ -555,7 +555,7 @@ finder.load_state_dict(torch.load('./init.pth'))
 criterion = nn.NLLLoss()
 criterion_add = nn.BCEWithLogitsLoss()
 Run the below cell for training.
-In [ ]:
+
 #Log
 
 train_logs = []
@@ -695,7 +695,7 @@ train.close()
 print("Done")
 Generation Graph
 You can change gen_size for the number of generating graph.
-In [ ]:
+
 gen_size = 10
 
 y_hat_node_batch = tensor([])
@@ -714,13 +714,13 @@ for _ in tqdm(range(gen_size)):
 mols_gen, smiles_gen, valid_rate_gen, failures_gen = write_mol(node_batch, edge_batch, gen_size)
 Show Generated Graph
 You can change index number (0 < index < len(mols_gen))
-In [ ]:
+
 len(mols_gen)
-In [ ]:
+
 index = 0
 SVG(moltosvg(mols_gen[index], molSize=(300,300), index=False))
 Show Plot
-In [ ]:
+
 train_logs = pd.read_csv('./train_logs.csv')
 
 source_train = ColumnDataSource(train_logs)
@@ -731,7 +731,7 @@ p.line(x='epoch', y='loss', source=source_train, legend="Train")
 draw = show(p, notebook_handle=True)
 Find Optim Learning rate. (Option)
 Choice the learning rate before increasing loss.
-In [ ]:
+
 ##Optimal learning rates
 
 #Log
